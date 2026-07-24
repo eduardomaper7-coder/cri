@@ -1,16 +1,35 @@
-# React + Vite
+# CRI Tenerife — rediseño marrón con páginas individuales
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Versión responsive alineada con el color marrón del logotipo original.
 
-Currently, two official plugins are available:
+## Páginas principales
+- `index.html`
+- `quienes-somos.html`
+- `tecnologia.html`
+- `fisioterapia.html`
+- `servicios-medicos.html`
+- `tratamientos.html`
+- `blog.html`
+- `contacto.html`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Páginas individuales de fisioterapia
+- `terapia-manual.html`
+- `fisioterapia-suelo-pelvico.html`
+- `fisioterapia-preparto-postparto.html`
+- `fisioterapia-pediatrica.html`
+- `fisioterapia-neurologica.html`
+- `fisioterapia-traumatologica.html`
+- `pilates-terapeutico.html`
+- `terapia-acuatica-adeje.html`
+- `fisioterapia-invasiva.html`
 
-## React Compiler
+Todos los enlaces son relativos y el sitio puede previsualizarse abriendo `index.html`. El formulario sigue siendo una maqueta visual pendiente de conexión con el sistema definitivo.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Blog completo
+La página `blog.html` contiene 16 artículos internos con página individual, imágenes, navegación y llamadas a la acción. El listado completo está en `BLOG_ARTICULOS.txt`.
 
-## Expanding the ESLint configuration
+Los artículos se han adaptado al nuevo diseño y redactado en formato divulgativo. Los contenidos sanitarios incluyen un aviso para recordar que no sustituyen una valoración profesional.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Actualización de fotografías
+Las imágenes de servicios, especialidades médicas y artículos del blog se han sustituido por las fotografías de los PDF, capturas y archivo multimedia facilitados.
