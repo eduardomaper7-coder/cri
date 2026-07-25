@@ -380,3 +380,7 @@ body { background: var(--cream); }
 .related-grid { margin-top:38px; }
 .related-grid .card-body p { display:none; }
 @media (max-width:760px) { .blog-intro{align-items:flex-start;flex-direction:column}.article-section{padding-top:48px}.article-cover{margin-bottom:32px}.article-content{font-size:1rem} }
+
+/* Media quality improvements */
+img { image-rendering: auto; }
+.brand img, .footer-logo { height: auto; object-fit: contain; }

@@ -1,0 +1,19 @@
+MEJORAS MULTIMEDIA REALIZADAS
+
+1. LOGOTIPO
+- Sustituido el logotipo pequeño por la versión retina en alta resolución.
+- Sustituido el favicon por el icono cuadrado oficial de CRI.
+
+2. FOTOGRAFÍAS
+- Fotografías reexportadas en WebP de alta calidad.
+- Resolución elevada para pantallas de alta densidad.
+- En las imágenes identificadas, se recuperó la fotografía desde el archivo multimedia original y se reconstruyó el mismo encuadre de la web.
+- Se mantuvieron el aspecto, el recorte y los colores del diseño.
+
+3. VÍDEOS
+- Reproductores de YouTube configurados para solicitar calidad HD/1080p.
+- Subtítulos automáticos desactivados mediante cc_load_policy=0.
+- Anotaciones desactivadas y reproducción en línea habilitada.
+
+NOTA SOBRE YOUTUBE
+YouTube decide finalmente la resolución reproducida según la conexión, el dispositivo y su propia configuración. Los subtítulos que estén grabados dentro de la imagen del vídeo no se pueden quitar desde el código de la web; para eliminarlos se necesita el archivo maestro del vídeo sin textos.

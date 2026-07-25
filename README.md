@@ -33,3 +33,10 @@ Los artículos se han adaptado al nuevo diseño y redactado en formato divulgati
 
 ## Actualización de fotografías
 Las imágenes de servicios, especialidades médicas y artículos del blog se han sustituido por las fotografías de los PDF, capturas y archivo multimedia facilitados.
+
+
+## Mejora de calidad multimedia
+- Logotipo sustituido por su versión retina y favicon CRI cuadrado.
+- Fotografías exportadas de nuevo a WebP de alta calidad y, cuando fue posible, reconstruidas desde los originales del archivo multimedia.
+- Resolución elevada para pantallas de alta densidad, manteniendo el encuadre original.
+- Reproductores de YouTube configurados para solicitar HD y no activar subtítulos (`cc_load_policy=0`). La resolución final depende de YouTube, la conexión y el dispositivo. Los subtítulos incrustados dentro de la imagen solo pueden eliminarse usando el vídeo maestro sin textos.

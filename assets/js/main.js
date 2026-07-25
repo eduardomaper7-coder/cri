@@ -15,7 +15,7 @@ document.querySelectorAll('.video-card').forEach(card => {
     if (card.querySelector('iframe')) return;
     const id = card.dataset.youtube;
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&cc_load_policy=0&vq=hd1080`;
     iframe.title = card.dataset.title || 'Vídeo de CRI';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
