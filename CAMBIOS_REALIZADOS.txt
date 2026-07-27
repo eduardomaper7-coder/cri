@@ -10,6 +10,11 @@ MEJORAS MULTIMEDIA REALIZADAS
   desplazarse por la página.
 - Los botones superiores de “Pide cita” utilizan el marrón de marca con texto
   blanco.
+- Corregida la prioridad de estilos del botón “Pide cita” dentro del menú
+  móvil para que el texto blanco mantenga el contraste.
+- Reforzada la visibilidad de la cabecera: fondo transparente más contrastado,
+  textos blancos, desenfoque y sombra en escritorio; fondo blanco, logotipo
+  dimensionado y botón de menú más definido en móvil.
 - Los títulos pequeños con línea decorativa se muestran en blanco cuando están
   sobre cabeceras, llamadas a la acción o secciones oscuras.
 
