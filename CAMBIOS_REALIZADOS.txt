@@ -18,6 +18,9 @@ MEJORAS MULTIMEDIA REALIZADAS
 - Reproductores de YouTube configurados para solicitar calidad HD/1080p.
 - Subtítulos automáticos desactivados mediante cc_load_policy=0.
 - Anotaciones desactivadas y reproducción en línea habilitada.
+- Añadido un segundo bloqueo mediante la API de YouTube: el módulo de subtítulos
+  se descarga al cargar y cada vez que cambia el estado de reproducción, para
+  impedir que las preferencias guardadas del navegador los activen de nuevo.
 - En móvil, el vídeo se muestra completo en formato 16:9, centrado sobre fondo
   negro y sin recortarse para rellenar la pantalla.
 - El texto web superpuesto se oculta en el hero móvil para respetar la
