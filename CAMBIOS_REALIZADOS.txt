@@ -3,8 +3,13 @@ MEJORAS MULTIMEDIA REALIZADAS
 1. LOGOTIPO
 - Sustituido el logotipo pequeño por la versión retina en alta resolución.
 - Sustituido el favicon por el icono cuadrado oficial de CRI.
-- Eliminada la mini cabecera superior de dirección, teléfono y reserva; se
-  mantiene únicamente la cabecera principal.
+- Recuperada la barra superior de escritorio con dirección, teléfono, correo y
+  acceso a reserva; permanece oculta en móvil para ahorrar espacio.
+- En el inicio, la navegación se superpone al hero con fondo translúcido,
+  desenfoque, logotipo blanco y enlaces claros; además permanece fija al
+  desplazarse por la página.
+- Los botones superiores de “Pide cita” utilizan el marrón de marca con texto
+  blanco.
 - Los títulos pequeños con línea decorativa se muestran en blanco cuando están
   sobre cabeceras, llamadas a la acción o secciones oscuras.
 
