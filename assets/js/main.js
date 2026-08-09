@@ -7,6 +7,16 @@ if (toggle && nav) {
     toggle.setAttribute('aria-expanded', String(open));
   });
 }
+
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  const onHeaderScroll = () => {
+    if (window.scrollY > 30) siteHeader.classList.add('scrolled');
+    else siteHeader.classList.remove('scrolled');
+  };
+  onHeaderScroll();
+  window.addEventListener('scroll', onHeaderScroll, { passive: true });
+}
 document.querySelectorAll('.nav-drop > button').forEach(btn => {
   btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
 });
@@ -31,15 +41,27 @@ function suppressYouTubeCaptions(player) {
   try { player.unloadModule('cc'); } catch (_) {}
   try { player.setOption('captions', 'track', {}); } catch (_) {}
 }
+function forceHighestQuality(player) {
+  try {
+    const levels = player.getAvailableQualityLevels ? player.getAvailableQualityLevels() : [];
+    const best = levels && levels.length ? levels[0] : 'hd1080';
+    player.setPlaybackQuality(best);
+  } catch (_) {}
+}
 function initCaptionBlockingPlayer(iframe) {
   if (!window.YT || !window.YT.Player || captionPlayers.has(iframe)) return;
   const player = new window.YT.Player(iframe, {
     events: {
       onReady: event => {
         suppressYouTubeCaptions(event.target);
+        forceHighestQuality(event.target);
         window.setTimeout(() => suppressYouTubeCaptions(event.target), 800);
+        window.setTimeout(() => forceHighestQuality(event.target), 1200);
       },
-      onStateChange: event => suppressYouTubeCaptions(event.target)
+      onStateChange: event => {
+        suppressYouTubeCaptions(event.target);
+        forceHighestQuality(event.target);
+      }
     }
   });
   captionPlayers.set(iframe, player);
