@@ -235,11 +235,18 @@ p { margin: 0 0 1.25em; }
   .nav { position:fixed; inset:96px 18px auto; display:none; flex-direction:column; align-items:stretch; padding:16px; background:white; border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); }
   .nav.open { display:flex; }
   .nav > a,.nav-drop > button { width:100%; text-align:left; }
+  /* Inside the open mobile popover the panel is always white, so links must
+     always use the dark ("scrolled") colours, whether or not the page has
+     been scrolled. */
+  .nav.open > a, .nav.open .nav-drop > button { color:#514741; text-shadow:none; }
+  .nav.open > a:hover, .nav.open > a.active, .nav.open .nav-drop > button:hover { color:var(--navy); background:#f3eeea; box-shadow:none; }
   .nav-drop-menu { position:static; display:none; opacity:1; visibility:visible; transform:none; box-shadow:none; border:0; padding:0 0 0 12px; }
   .nav-drop.open .nav-drop-menu { display:block; }
   .nav-drop:hover .nav-drop-menu { display:none; }
   .nav-drop.open:hover .nav-drop-menu { display:block; }
   .menu-toggle { display:block; }
+  .site-header:not(.scrolled) .menu-toggle { border-color:rgba(255,255,255,.4); background:rgba(255,255,255,.1); }
+  .site-header:not(.scrolled) .menu-toggle span { background:#fff; }
   .nav-cta { margin-left:0; }
   .team-grid { grid-template-columns:repeat(3,1fr); }
   .footer-grid { grid-template-columns:1.4fr 1fr 1fr; }
