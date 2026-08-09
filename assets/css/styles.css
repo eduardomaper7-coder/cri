@@ -232,18 +232,20 @@ p { margin: 0 0 1.25em; }
 .reveal.is-visible { opacity:1; transform:none; }
 
 @media (max-width: 1050px) {
-  .nav { position:fixed; inset:96px 18px auto; display:none; flex-direction:column; align-items:stretch; padding:16px; background:white; border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); }
+  .nav { position:fixed; inset:96px 18px auto; display:none; flex-direction:column; align-items:stretch; gap:2px; padding:14px; background:white; border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow); max-height:calc(100vh - 116px); overflow-y:auto; }
   .nav.open { display:flex; }
-  .nav > a,.nav-drop > button { width:100%; text-align:left; }
+  .nav > a,.nav-drop > button { width:100%; text-align:left; font-size:.96rem; padding:11px 12px; }
   /* Inside the open mobile popover the panel is always white, so links must
      always use the dark ("scrolled") colours, whether or not the page has
      been scrolled. */
   .nav.open > a, .nav.open .nav-drop > button { color:#514741; text-shadow:none; }
   .nav.open > a:hover, .nav.open > a.active, .nav.open .nav-drop > button:hover { color:var(--navy); background:#f3eeea; box-shadow:none; }
-  .nav-drop-menu { position:static; display:none; opacity:1; visibility:visible; transform:none; box-shadow:none; border:0; padding:0 0 0 12px; }
+  .nav-drop-menu { position:static; display:none; opacity:1; visibility:visible; transform:none; box-shadow:none; border:0; margin:2px 4px 8px; padding:4px 0 2px 14px; border-left:2px solid var(--line); }
   .nav-drop.open .nav-drop-menu { display:block; }
   .nav-drop:hover .nav-drop-menu { display:none; }
   .nav-drop.open:hover .nav-drop-menu { display:block; }
+  .nav-drop-menu a { padding:8px 10px; font-size:.82rem; font-weight:600; line-height:1.3; color:#6b6159; }
+  .nav-drop-menu a:first-child { font-weight:800; color:#4a403a; padding-bottom:9px; margin-bottom:3px; border-bottom:1px solid var(--line); }
   .menu-toggle { display:block; }
   .site-header:not(.scrolled) .menu-toggle { border-color:rgba(255,255,255,.4); background:rgba(255,255,255,.1); }
   .site-header:not(.scrolled) .menu-toggle span { background:#fff; }
