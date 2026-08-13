@@ -66,8 +66,8 @@ p { margin: 0 0 1.25em; }
 .nav > a, .nav-drop > button { border: 0; background: none; padding: 10px 10px; color: #fff; font-weight: 750; font-size: clamp(.76rem, .95vw, .92rem); border-radius: 999px; white-space: nowrap; text-shadow: 0 1px 12px rgba(0,0,0,.3); transition: color .3s ease, background .2s ease, text-shadow .3s ease; }
 .nav > a:hover, .nav > a.active, .nav-drop > button:hover { color: #fff; background: rgba(255,255,255,.16); }
 .nav > a.active { box-shadow: inset 0 0 0 1px rgba(255,255,255,.7); }
-.site-header.scrolled .nav > a, .site-header.scrolled .nav-drop > button { color: #514741; text-shadow: none; }
-.site-header.scrolled .nav > a:hover, .site-header.scrolled .nav > a.active, .site-header.scrolled .nav-drop > button:hover { color: var(--navy); background: #f3eeea; }
+.site-header.scrolled .nav > a:not(.nav-cta), .site-header.scrolled .nav-drop > button { color: #514741; text-shadow: none; }
+.site-header.scrolled .nav > a:not(.nav-cta):hover, .site-header.scrolled .nav > a.active:not(.nav-cta), .site-header.scrolled .nav-drop > button:hover { color: var(--navy); background: #f3eeea; }
 .site-header.scrolled .nav > a.active { box-shadow: none; }
 .nav-drop { position: relative; }
 .nav-drop-menu { position: absolute; top: calc(100% + 10px); left: 0; min-width: 245px; padding: 10px; background: white; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: .2s; }
@@ -75,11 +75,22 @@ p { margin: 0 0 1.25em; }
 .nav-drop-menu a { display: block; padding: 11px 12px; border-radius: 10px; font-weight: 700; color: #5f554f; white-space: normal; }
 .nav-drop-menu a:hover { background: var(--mist); color: var(--navy); }
 .nav-cta { margin-left: 4px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.42); }
-.site-header.scrolled .nav-cta { background: var(--navy); border-color: transparent; }
-.menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.4); border-radius: 14px; background: rgba(255,255,255,.1); }
-.menu-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px auto; }
+.site-header.scrolled .nav-cta { background: var(--navy); border-color: transparent; color: #fff; }
+.menu-toggle { display: none; position: relative; z-index: 2; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.4); border-radius: 14px; background: rgba(255,255,255,.1); }
+.menu-toggle span { display: block; width: 20px; height: 2px; background: #fff; margin: 4px auto; transition: transform .25s ease, opacity .2s ease; }
 .site-header.scrolled .menu-toggle { border-color: var(--line); background: white; }
 .site-header.scrolled .menu-toggle span { background: var(--navy); }
+/* Turn the hamburger into an "X" while the mobile nav is open. The open
+   popover panel is always white, so force a solid white button + dark "X"
+   here regardless of scroll state — otherwise a white "X" on the default
+   translucent button can blend into the white panel behind it. The extra
+   ".site-header .nav-wrap" qualifier is needed to outrank the
+   ".site-header:not(.scrolled) .menu-toggle" rule in the media query below. */
+.site-header .nav-wrap .menu-toggle[aria-expanded="true"] { background: white; border-color: var(--line); }
+.site-header .nav-wrap .menu-toggle[aria-expanded="true"] span { background: var(--navy); }
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .hero { position: relative; min-height: 100vh; display: flex; align-items: end; overflow: hidden; color: white; background: var(--navy); }
 .hero-media { position: absolute; inset: 0; overflow: hidden; background: url('../img/about-hero.webp') center/cover; }
@@ -243,7 +254,11 @@ p { margin: 0 0 1.25em; }
      always use the dark ("scrolled") colours, whether or not the page has
      been scrolled. */
   .nav.open > a, .nav.open .nav-drop > button { color:#514741; text-shadow:none; }
-  .nav.open > a:hover, .nav.open > a.active, .nav.open .nav-drop > button:hover { color:var(--navy); background:#f3eeea; box-shadow:none; }
+  .nav.open > a:not(.nav-cta):hover, .nav.open > a.active:not(.nav-cta), .nav.open .nav-drop > button:hover { color:var(--navy); background:#f3eeea; box-shadow:none; }
+  /* .nav-cta keeps its own colour here: the ".site-header.scrolled .nav-cta"
+     rule above (3 classes) already outranks the ".nav.open > a" rule just
+     above (2 classes + 1 type) whenever the header has scrolled, so the CTA
+     label stays white on its dark pill inside the mobile popover too. */
   .nav-drop-menu { position:static; display:none; opacity:1; visibility:visible; transform:none; box-shadow:none; border:0; margin:2px 4px 8px; padding:4px 0 2px 14px; border-left:2px solid var(--line); }
   .nav-drop.open .nav-drop-menu { display:block; }
   .nav-drop:hover .nav-drop-menu { display:none; }
@@ -330,7 +345,7 @@ p { margin: 0 0 1.25em; }
 /* CRI brown identity */
 body { background: var(--cream); }
 .site-header.scrolled { background: rgba(251,249,247,.97); border-bottom-color: rgba(139,129,122,.22); }
-.site-header.scrolled .nav > a:hover, .site-header.scrolled .nav > a.active, .site-header.scrolled .nav-drop > button:hover { background: #f0eae6; color: var(--brown-dark); }
+.site-header.scrolled .nav > a:not(.nav-cta):hover, .site-header.scrolled .nav > a.active:not(.nav-cta), .site-header.scrolled .nav-drop > button:hover { background: #f0eae6; color: var(--brown-dark); }
 .section-soft { background: #f3eeea; }
 .btn-primary { color: var(--brown-dark); background: #d9ccc3; box-shadow: 0 12px 30px rgba(139,129,122,.24); }
 .btn-primary:hover { background: #e6ddd6; }
