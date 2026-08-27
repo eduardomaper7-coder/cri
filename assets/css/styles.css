@@ -449,3 +449,14 @@ img { image-rendering: auto; }
 
 /* Footer disclaimer note */
 .footer-note { margin-top: 26px; padding: 16px 18px; border-radius: 14px; background: rgba(255,255,255,.5); border: 1px solid rgba(74,64,58,.1); color: #7a716a; font-size: .82rem; line-height:1.5; }
+
+/* Pautas por unidad médica: fichas de procedimiento (listas de comprobación y secciones numeradas) */
+.article-content h3 { color: var(--brown-dark); margin-top: 1.9em; }
+.checklist { list-style: none; padding-left: 0; margin: 0 0 1.5em; }
+.checklist li { position: relative; padding-left: 1.7em; margin: .5em 0; }
+.checklist li::before { content: "\2610"; position: absolute; left: 0; top: -1px; color: #8b817a; font-size: 1.05em; }
+.units-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 320px)); gap: 24px; margin-top: 20px; }
+.unit-card { display: flex; flex-direction: column; height: 100%; }
+.unit-card .card-body { display: flex; flex-direction: column; flex: 1; }
+.unit-card .card-link { margin-top: auto; }
+.unit-card-soon { opacity: .55; }
