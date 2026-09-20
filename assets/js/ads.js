@@ -44,7 +44,7 @@
     panel.id = 'cri-cookie-choice';
     panel.setAttribute('aria-label', 'Preferencias de cookies');
     panel.style.cssText = 'position:fixed;bottom:16px;left:16px;right:16px;max-width:660px;background:#fff;color:#26221e;padding:20px;border:1px solid #c9c0b6;border-radius:12px;box-shadow:0 4px 24px #0003;z-index:10000';
-    panel.innerHTML = '<p>Con tu permiso, usamos cookies de Google Ads para medir qué anuncios generan contactos. Puedes aceptar o rechazar esta medición y cambiar tu decisión en «Cookies».</p><div style="display:flex;gap:12px;margin-top:12px"><button type="button" class="btn btn-outline" data-choice="no">Rechazar</button><button type="button" class="btn btn-outline" data-choice="yes">Aceptar</button></div>';
+    panel.innerHTML = '<p>Con tu permiso, usamos cookies de Google Ads para medir qué anuncios generan contactos. Puedes aceptar o rechazar esta medición y cambiar tu decisión en «Cookies».</p><div style="display:flex;gap:12px;margin-top:12px"><button type="button" class="btn btn-outline-dark" data-choice="no">Rechazar</button><button type="button" class="btn btn-dark" data-choice="yes">Aceptar</button></div>';
     panel.addEventListener('click', event => {
       const button = event.target.closest('[data-choice]');
       if (!button) return;
@@ -67,3 +67,4 @@
   }
   if (!choice) showPreferences();
 })();
+
