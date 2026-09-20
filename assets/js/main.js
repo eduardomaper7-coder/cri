@@ -80,13 +80,3 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
 }, { threshold: .12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-const form = document.querySelector('[data-demo-form]');
-if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const status = form.querySelector('.form-status');
-    status.style.display = 'block';
-    status.textContent = 'Gracias. Esta maqueta está preparada para conectar el formulario con el sistema de citas o el correo de CRI.';
-    form.reset();
-  });
-}

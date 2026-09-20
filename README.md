@@ -23,7 +23,7 @@ Versión responsive alineada con el color marrón del logotipo original.
 - `terapia-acuatica-adeje.html`
 - `fisioterapia-invasiva.html`
 
-Todos los enlaces son relativos y el sitio puede previsualizarse abriendo `index.html`. El formulario sigue siendo una maqueta visual pendiente de conexión con el sistema definitivo.
+Todos los enlaces son relativos y el sitio puede previsualizarse abriendo `index.html`. La página de contacto ofrece WhatsApp y reserva en Doctoralia, sin formulario. Consulta PUBLICAR-CONVERSIONES.md para completar las dos etiquetas de Google Ads antes de publicar.
 
 ## Blog completo
 La página `blog.html` contiene 16 artículos internos con página individual, imágenes, navegación y llamadas a la acción. El listado completo está en `BLOG_ARTICULOS.txt`.
